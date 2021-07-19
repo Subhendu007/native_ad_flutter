@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:native_ad_flutter/ad_helper.dart';
+import 'package:native_ad_flutter/constants.dart';
 
 class NativeAdsPage extends StatefulWidget {
   const NativeAdsPage({Key? key}) : super(key: key);
@@ -31,29 +32,32 @@ class _NativeAdsPageState extends State<NativeAdsPage> {
                 'Ad load failed (code=${error.code} message=${error.message}');
           },
         ),
-        request: AdRequest());
+        request: AdRequest(nonPersonalizedAds: false));
     _ad.load();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.tealAccent,
+      backgroundColor: Colors.white,
       body: _isAdLoaded
           ? Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
+                  height: 190,
+                  width: 360,
+                  margin: EdgeInsets.only(left: 20, right: 20),
+                  decoration: BoxDecoration(
+                    boxShadow: listShadow,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: AdWidget(ad: _ad),
-                  height: 72.0,
-                  //alignment: Alignment.center,
                 ),
               ],
             )
           : Center(
-              child: Container(
-                child: Text('not found'),
-              ),
+              child: CircularProgressIndicator(),
             ),
     );
   }
