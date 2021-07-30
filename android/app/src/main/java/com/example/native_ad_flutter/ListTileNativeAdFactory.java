@@ -38,31 +38,31 @@ class ListTileNativeAdFactory implements GoogleMobileAdsPlugin.NativeAdFactory {
 //                .findViewById(R.id.tv_list_tile_native_ad_attribution_large);
 
 //Icon view
-//        ImageView iconView = nativeAdView.findViewById(R.id.iv_list_tile_native_ad_icon);
-//        NativeAd.Image icon = nativeAd.getIcon();
-//        if (icon != null) {
-//            attributionViewSmall.setVisibility(View.VISIBLE);
-//            //attributionViewLarge.setVisibility(View.INVISIBLE);
-//            iconView.setImageDrawable(icon.getDrawable());
-//        } else {
-//            attributionViewSmall.setVisibility(View.INVISIBLE);
-//           // attributionViewLarge.setVisibility(View.VISIBLE);
-//        }
-//
-//        nativeAdView.setIconView(iconView);
+        ImageView iconView = nativeAdView.findViewById(R.id.iv_list_tile_native_ad_icon);
+        NativeAd.Image icon = nativeAd.getIcon();
+        if (icon != null) {
+            attributionViewSmall.setVisibility(View.VISIBLE);
+            //attributionViewLarge.setVisibility(View.INVISIBLE);
+            iconView.setImageDrawable(icon.getDrawable());
+        } else {
+            attributionViewSmall.setVisibility(View.INVISIBLE);
+           // attributionViewLarge.setVisibility(View.VISIBLE);
+        }
+iconView.setClipToOutline(true);
+        nativeAdView.setIconView(iconView);
 
 //media view
 
-        MediaView mediaContent= nativeAdView.findViewById(R.id.tv_list_tile_native_ad_media);
-        mediaContent.setMediaContent(Objects.requireNonNull(nativeAd.getMediaContent()));
-        mediaContent.setImageScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        nativeAdView.setMediaView(mediaContent);
+//        MediaView mediaContent= nativeAdView.findViewById(R.id.tv_list_tile_native_ad_media);
+//        mediaContent.setMediaContent(Objects.requireNonNull(nativeAd.getMediaContent()));
+//        mediaContent.setImageScaleType(ImageView.ScaleType.CENTER_INSIDE);
+//        nativeAdView.setMediaView(mediaContent);
 
 ////headline view
-//        TextView headlineView = nativeAdView.findViewById(R.id.tv_list_tile_native_ad_headline);
-//        headlineView.setText(nativeAd.getHeadline());
-//
-//        nativeAdView.setHeadlineView(headlineView);
+        TextView headlineView = nativeAdView.findViewById(R.id.tv_list_tile_native_ad_headline);
+        headlineView.setText(nativeAd.getHeadline());
+
+        nativeAdView.setHeadlineView(headlineView);
 
 //body view
         TextView bodyView = nativeAdView.findViewById(R.id.tv_list_tile_native_ad_body);

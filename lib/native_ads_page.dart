@@ -45,7 +45,7 @@ class _NativeAdsPageState extends State<NativeAdsPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 190,
+                  height: 150,
                   width: 360,
                   margin: EdgeInsets.only(left: 20, right: 20),
                   decoration: BoxDecoration(
